@@ -1,1 +1,6 @@
 <p>listado works!</p>
+<ul>
+  <mat-list *ngIf="heroes.length > 0">
+    <mat-list-item *ngFor="let heroe of heroes">{{heroe.superhero}}</mat-list-item>
+  </mat-list>
+</ul>
