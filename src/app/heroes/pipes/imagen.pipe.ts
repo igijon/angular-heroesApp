@@ -8,7 +8,15 @@ export class ImagenPipe implements PipeTransform {
 
   imgBase:string = 'assets/heroes/';
   transform(value: Heroe): string {
-    return `${this.imgBase}${value.id}.jpg`;
+    if(!value.id && !value.alt_img) {
+      return  `assets/no-image.png`;
+    }
+    else if (value.alt_img) {
+      return value.alt_img;
+    }
+    else {
+      return `${this.imgBase}${value.id}.jpg`;
+    }
   }
 
 }
