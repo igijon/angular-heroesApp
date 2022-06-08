@@ -1,4 +1,8 @@
-<h1>Nuevo héroe <small>{{heroe.superhero}}</small></h1>
+<h1>
+  {{( heroe.id ) ? 'Editar': 'Nuevo'}}
+  héroe
+  <small>{{heroe.superhero}}</small>
+</h1>
 <div fxLayout="row"
      fxLayoutGap="40px"
      fxLayout.xs="column">
@@ -58,7 +62,7 @@
               color="primary"
               (click)="guardar()">
         <mat-icon>edit</mat-icon>
-        Guardar
+        {{( heroe.id ) ? 'Actualizar': 'Guardar'}}
       </button>
       <span class="spacer"></span>
       <button *ngIf="heroe.id"
